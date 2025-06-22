@@ -49,21 +49,21 @@ No installation needed if running the static version. You can simply open the `i
 
 2. Open index.html in your browser:
   
-  ```
-  open index.html   # macOS
-  start index.html  # Windows
-  ```
+     ```
+     open index.html   # macOS
+     start index.html  # Windows
+     ```
 
 3. Upload your exported Postman JSON file to generate the report.
 
 ### Option 2: Deploy Online
 
 You can host this tool on:
-
-GitHub Pages
-Netlify
-Vercel
-
+   ```
+   GitHub Pages
+   Netlify
+   Vercel
+   ```
 ⚠️ Ensure CORS and local file access permissions are set if deploying to a strict host.
 
 📂 File Structure
@@ -86,18 +86,17 @@ Main dashboard showing test summary
 
 Example of exported PDF
 
-🧪 How to Use
-Run your tests in Postman using the Collection Runner.
 
-Export the results as a JSON file.
+## 🧪 How to Use
+   ```
+   Run your tests in Postman using the Collection Runner.
+   Export the results as a JSON file.
+   Open the index.html of this tool.
+   Click "Upload JSON" and select your exported Postman file.
+   View the dashboard or download the report as PDF.
+   ```
 
-Open the index.html of this tool.
-
-Click "Upload JSON" and select your exported Postman file.
-
-View the dashboard or download the report as PDF.
-
-🌍 Roadmap
+##  🌍 Roadmap
  React version with routing and components
 
  Dark/light mode switch
@@ -106,7 +105,7 @@ View the dashboard or download the report as PDF.
 
  CI/CD plugin integration (e.g., GitHub Actions, Jenkins)
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! To contribute:
 ```
 Fork the repo
@@ -119,7 +118,8 @@ Push to the branch: git push origin feature/awesome-feature
 
 Submit a pull request
 ```
-📄 License
+
+## 📄 License
 MIT License © 2025 Fidelis Ogbeni
 
 🙌 Acknowledgements
@@ -130,7 +130,7 @@ html2canvas
 Chart.js
 ```
 
-🔗 Connect With Me
+## 🔗 Connect With Me
 Fidelis Ogbeni
 QA Engineer | Automation | Performance Testing
 
