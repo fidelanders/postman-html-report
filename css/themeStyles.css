@@ -1,0 +1,53 @@
+/* Base Light Theme */
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #212529;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --primary: #FF6C37;
+  --header-bg: #ffffff;
+}
+
+/* Dark Theme */
+:root.dark-theme,
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --text: #f1f1f1;
+  --muted: #aaaaaa !;
+  --border: #444444;
+  --primary: #FF8C66;
+  --header-bg: #1a1a1a;
+}
+
+/* Apply to all elements */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Theme button active states */
+.theme-btn.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Make sure all components use theme variables */
+.card, .test-card, .summary-card {
+  background-color: var(--card-bg);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Response body theming */
+.response-body-container {
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: var(--muted) !important;
+}
