@@ -446,3 +446,44 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
   }
 });
 
+
+// Fail test redirect
+function animatedScrollTo(targetY, duration = 600) {
+    const startY = window.pageYOffset;
+    const distanceY = targetY - startY;
+    let startTime = null;
+
+    function easeInOutQuad(t) {
+      return t < 0.5
+        ? 2 * t * t
+        : -1 + (4 - 2 * t) * t;
+    }
+
+    function scroll(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = easeInOutQuad(progress);
+      window.scrollTo(0, startY + distanceY * ease);
+
+      if (progress < 1) {
+        requestAnimationFrame(scroll);
+      }
+    }
+
+    requestAnimationFrame(scroll);
+  }
+
+  document.getElementById("viewFailedBtn").addEventListener("click", function () {
+    const failedTab = document.getElementById("failed-tab");
+    const offsetTop = failedTab.getBoundingClientRect().top + window.pageYOffset - 100; // Adjust offset if needed
+
+    // Smooth scroll to the failed tab button
+    animatedScrollTo(offsetTop, 700); // scroll duration = 700ms
+
+    // Activate the tab after short delay (can be instant too)
+    setTimeout(() => {
+      failedTab.click();
+    }, 750); // Match or slightly exceed scroll duration
+  });
+
