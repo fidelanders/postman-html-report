@@ -152,10 +152,10 @@ function renderReport(data) {
         const response = result.response || {};
         
        // Get method from collection by matching result.id
-let method = '';
+let method = 'GET';
 if (collection?.requests) {
     const match = collection.requests.find(req => req.id === result.id);
-    method = match?.method?.toUpperCase() || '';
+    method = match?.method?.toUpperCase() || 'GET';
 }
 
         return {
