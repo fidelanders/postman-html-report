@@ -375,6 +375,10 @@ header {
   .no-print {
     display: none !important;
   }
+
+  .theme-toggle {
+    display: none !important;
+  }
   
   body {
     border-top: none;
