@@ -133,7 +133,8 @@ function renderReport(data) {
         alert('Could not find test results in the provided JSON. Please provide a valid Postman run report.');
         return;
     }
-
+      const collection = data.collection || {};
+    
     document.getElementById('reportTitle').textContent = data.name || data.collection?.info?.name || 'Postman Test Report';
 
     allTests = results.map(result => {
