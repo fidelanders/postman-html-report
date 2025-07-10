@@ -151,12 +151,21 @@ function renderReport(data) {
         const request = result.request || {};
         const response = result.response || {};
         
-       // Get method from collection by matching result.id
-let method = 'GET';
-if (collection?.requests) {
+// ****************************
+//         let method = (request.method || result.method || 'GET').toString().trim().toUpperCase();
+// if (method === 'REQUEST URL:') method = 'GET';
+
+// Determine method using collection reference if available, else fallback to 'ENDPOINT'
+let method = 'ENDPOINT';
+if (collection?.requests?.length) {
     const match = collection.requests.find(req => req.id === result.id);
-    method = match?.method?.toUpperCase() || 'GET';
+    method = match?.method?.toUpperCase() || 
+             (request.method || result.method || 'ENDPOINT').toString().trim().toUpperCase();
+} else {
+    method = (request.method || result.method || 'ENDPOINT').toString().trim().toUpperCase();
 }
+if (method === 'REQUEST URL:') method = 'ENDPOINT';
+// **********************************
 
         return {
             name: result.name || request.name || 'Unnamed Request',
