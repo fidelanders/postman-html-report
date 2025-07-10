@@ -78,8 +78,8 @@ function renderTests(filtered, containerId) {
             
             <div class="endpoint d-flex align-items-center mt-2">
                 <strong class="me-2">${item.method}</strong>
-                <span id="url-${index}" class="flex-grow-1">${item.url}</span>
-                <button class="btn btn-sm p-0 ms-2 btn-toggle-visibility" onclick="toggleVisibility('url-${index}', this.querySelector('i'))" title="Hide endpoint">
+                <span id="${containerId}-url-${index}" class="flex-grow-1">${item.url}</span>
+                <button class="btn btn-sm p-0 ms-2 btn-toggle-visibility" onclick="toggleVisibility('${containerId}-url-${index}', this.querySelector('i'))" title="Hide endpoint">
                     <i class="fas fa-eye-slash"></i>
                 </button>
             </div>
