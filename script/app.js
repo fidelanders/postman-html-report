@@ -151,8 +151,12 @@ function renderReport(data) {
         const request = result.request || {};
         const response = result.response || {};
         
-        let method = (request.method || result.method || 'GET').toString().trim().toUpperCase();
-        if (method === 'REQUEST URL:') method = 'GET';
+       // Get method from collection by matching result.id
+let method = '';
+if (collection?.requests) {
+    const match = collection.requests.find(req => req.id === result.id);
+    method = match?.method?.toUpperCase() || '';
+}
 
         return {
             name: result.name || request.name || 'Unnamed Request',
